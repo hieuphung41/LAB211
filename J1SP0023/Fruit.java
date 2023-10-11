@@ -61,7 +61,7 @@ public class Fruit {
 
     private Validation validation = new Validation();
 
-    public Fruit createFruit() {
+    public void createFruit() {
         System.out.print("Input fruit id: ");
         this.fruitID = validation.getInt();
         System.out.print("Input fruit name: ");
@@ -72,7 +72,7 @@ public class Fruit {
         this.quantity = validation.getInt();
         System.out.print("Input origin: ");
         this.origin = validation.getString();
-        return this;
+
     }
 
 }

@@ -38,39 +38,7 @@ public class Main {
                         System.err.println("No fruit!");
                         break;
                     }
-                    int id;
-                    ArrayList<Order> ol = new ArrayList<>();
-                    while (true) {
-                        if (FL.fruitList.isEmpty()) {
-                            System.err.println("No fruit!");
-                            break;
-                        }
-                        FL.displayFruits();
-                        System.out.print("Select item to buy: ");
-                        id = validation.getInt();
-                        Fruit fruit = FL.getFruit(id);
-                        if (fruit != null) {
-                            Order order = new Order();
-                            System.out.println("You selected: " + fruit.getFruitName());
-                            System.out.print("Please input quantity: ");
-                            int quantity = validation.getIntInRange(0, fruit.getQuantity());
-                            order.createOrder(fruit, quantity);
-                            ol.add(order);
-                            if ((fruit.getQuantity() - quantity) == 0) {
-                                FL.removeFruit(fruit);
-                            } else {
-                                fruit.setQuantity(fruit.getQuantity() - quantity);
-                            }
-                            System.out.println("Do you want to continue (Y/N)? ");
-                            if (!validation.getYN()) {
-                                break;
-                            }
-                        } else {
-                            System.err.println("Invalid id!");
-                        }
-                    }
-                    OL.shopping(ol);
-
+                    OL.shopping(FL, OL);
                     break;
                 case 4:
                     System.exit(0);
