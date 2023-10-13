@@ -38,7 +38,7 @@ public class Main {
                         System.err.println("No fruit!");
                         break;
                     }
-                    OL.shopping(FL, OL);
+                    OL.shopping(FL);
                     break;
                 case 4:
                     System.exit(0);
